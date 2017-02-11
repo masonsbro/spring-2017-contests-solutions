@@ -1,0 +1,74 @@
+<h1>No Land Zone</h1>
+
+<p>The political climate is rough these days, especially if you're traveling internationally. Seeing a business opportunity, you decide to create a business that plans trips for travelers. There are some countries that won't accept visitors of certain nationalities, even if they are just landing there and then taking a connecting flight. You would like to work around this and plan trips for people to various destinations.</p>
+
+<p>Laws are complicated, so here's a summary of the international travel restrictions:</p>
+<ul>
+	<li>If you start out in country X, you can always fly between different cities in country X as long as you don't leave the country (domestic flights are always allowed), even if citizens of your nationality are not allowed to enter country X.</li>
+	<li>If you start in a country in which you are not permitted to land in you may not return to that country once you have left.</li>
+	<li>If you start out in country Y, you can fly to country X if country X allows visitors of your nationality and if you can find a route to country X that doesn't go through any nations that you are not allowed to land in.</li>
+	<li>If you start out in country X you are allowed to take flights from country X to country Y if you are allowed to land in country Y, regardless of whether you are allowed to land in country X.</li>
+</ul>
+
+<p>As a travel agency, you would like to book flights for people that involve the fewest possible layovers. Can you do this?</p>
+
+<h4>Input</h4>
+
+<p>Input begins with a single integer T, the number of test cases. T test cases follow.</p>
+
+<p>Each test case begins with three integers, F, R, and Q. F is the number of flights, R is the number of country restrictions, and Q is the number of travelers you are trying to help.</p>
+
+<p>F lines follow, where each line is formatted as city_one country_one TO city_two country_two. This represents a flight from city one, country one to city two, country two. Note that this does NOT imply that there is a flight from city two, country two to city one, country one.</p>
+
+<p>R lines follow that, where each line is formatted as country_one NO country_two. This indicates that citizens of country one cannot travel to country two. Note that this does NOT imply that citizens from country two cannot enter country one.</p>
+
+<p>Finally, there are Q lines, where each line represents a traveler. Lines are formatted as home_country start_city start_country TO dest_city dest_country. This indicates that a citizen from country home_country would like to fly from start city, start country to dest city, dest country.</p>
+
+<p>All city names, country names, and nationalities will contain only alphabetic characters and will be at most 10 characters long. You may assume that words with different capitalizations are distinct cities/countries. For the sake of this problem, all travelers have exactly one home country (no travelers are citizens of multiple countries).</p>
+
+<p>No person will ever try to fly from their current city to their current city. No city will ever have a direct flight to itself.</p>
+
+<h4>Output</h4>
+
+<p>For each traveler in each test case print out the minimum number of layovers necessary for that travler to travel from their starting city to their destination city. Each number should be printed on a new line. Include a single blank line after each test case.</p>
+
+<p>If it is not possible for the traveler to travel between their start and destination cities, print "IMPOSSIBLE".</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 10
+1 <= F <= 70000
+0 <= R <= 200
+1 <= Q <= 500
+See input specification for additional constraints.
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+1
+4 2 2
+Moscow Russia TO London England
+London England TO Tokyo Japan
+Moscow Russia TO Sochi Russia
+Tokyo Japan TO Toronto Canada
+England NO Russia
+Russia NO Japan
+England Moscow Russia TO Sochi Russia
+Russia Moscow Russia TO Toronto Canada
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+0
+IMPOSSIBLE
+
+</pre>
+
+<h4>Explanation</h4>
+
+<p>In the first test case English citizens are not allowed to enter Russia, but since the traveler can fly domestically they can fly from Moscow to Sochi. There are no layovers (directly from Moscow to Sochi), so the answer is zero.</p>
+
+<p>The only way to get from Moscow to Toronto is to go Moscow -&gt; London -&gt; Tokyo -&gt; Toronto. Since Russian citizens can't enter Japan, this isn't possible. (Though if it were, the answer would be 2 as there are 2 layovers, one in London and one in Tokyo)</p>

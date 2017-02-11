@@ -1,0 +1,67 @@
+<h1>Airline Codes</h1>
+
+<p>Your friend, an air traffic controller, is tired of looking through unsorted lists of airport codes. He has asked you to alphabetize his airport codes for him. However, he also references some particular codes for local airports quite regularly, so, if these special codes appear in the input, alphabetize these separately at the top of the output.</p>
+
+<p>Each airport code is a unique, 3-letter, uppercase code.</p>
+
+<h4>Input</h4>
+
+<p>The first line contains a single integer T, the number of test cases. T
+test cases follow.</p>
+
+<p>Each test case consists of a single line with an integer, N, representing the number of prioritized airport codes. N codes follow. Then, another single line with an integer, M, follows. M input codes follow that should be outputted in alphabetical order with appropriate priority.</p>
+
+<h4>Output</h4>
+
+<p>Your program should output M lines for each test case, the properly sorted airport codes from the given input codes.</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 5
+0 <= N <= 4,000
+0 <= M <= 4,000
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+2
+2
+FKL
+ABL
+1
+AAN
+2
+FKL
+ABL
+9
+ABJ
+FKS
+ABI
+FKB
+ABM
+ABL
+FKQ
+ABK
+FKL
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+AAN
+ABL
+FKL
+ABI
+ABJ
+ABK
+ABM
+FKB
+FKQ
+FKS
+</pre>
+
+<h4>Explanation</h4>
+
+<p>In the first test case, codes FKL and ABL should be prioritized if they appear, but only AAN appears in the input so it is the only code outputted. In second case, the two airports ABL and FKL are outputted in prioritized sorted order, and the others follow in sorted order.</p>

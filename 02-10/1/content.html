@@ -1,0 +1,51 @@
+<h1>Seat Numbers</h1>
+
+<p>I was preparing to board my flight. Unfortunately, I lost my boarding card!
+Of course, my biggest concern is the size of the aircraft I'm about to fly on.
+I remember my seat number, however. Given my seat number, can you tell me the
+minimum possible capacity of my aircraft?</p>
+
+<p>My seat number is of the form [row number][aisle letter]. Aisles in this
+aircraft are guaranteed to be labeled as A-F. There are no incomplete
+aisles.</p>
+
+<h4>Input</h4>
+
+<p>The first line contains an integer T. T lines follow. Each line contains a
+string of the form [N][L].</p>
+
+<h4>Output</h4>
+
+<p>Please output T lines where the ith line contains the answer to the ith test
+case.</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 10
+1 <= N <= 1000000000
+'A' <= L <= 'F'
+1 <= i <= T
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+3
+23A
+46F
+1B
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+138
+276
+6
+</pre>
+
+<h4>Explanation</h4>
+
+<p>For the first case, there must be at least 23 rows in the aircraft, where
+each row can seat 6 passengers.</p>

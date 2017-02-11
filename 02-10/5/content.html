@@ -1,0 +1,48 @@
+<h1>Airplane Speed</h1>
+
+<p>While on the flight to your next interview, you notice the flight is a little choppy, and the pilot changes speeds fairly regularly. As the flight progresses, you take notes on the speed of the plane. At the end of the trip, your notes tell you the speed of the plane for various durations during the trip.</p>
+
+<p>Given the history of speeds for the airplane, what is the average speed of the plane? Note that the average speed is the single speed the plane would have to be traveling the whole time to cover the same amount of distance in the same amount of time. Assume that the plane changes speeds instantaneously.</p>
+
+<p>The speed is given in miles per hour and the duration is given in hours.</p>
+<h4>Input</h4>
+
+<p>The input will begin with a number T, the number of test cases.</p>
+<p>Each test case begins with an integer N, the number of data points you have on the plane's speed. The next N lines contain two space separated integers S_i D_i, the speed and duration of the flight.</p>
+
+<h4>Output</h4>
+
+<p>For each test case, print a single line with the average speed of the flight, rounded to the nearest integer.</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 10
+1 <= N <= 100000
+1 <= S_i <= 10^6
+1 <= D_i <= 10^6
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+2
+2
+500 3
+100 3
+3
+400 2
+600 1
+200 3
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+300
+333
+</pre>
+
+<h4>Explanation</h4>
+
+<p>In the first test case, the plane flies at 500 mph for 3 hours and then 100 mph for 3 hours. The average speed is then 300 mph.</p>

@@ -1,0 +1,76 @@
+<h1>Random Tickets</h1>
+
+<p>One day, I was scheduled to fly somewhere, but I lost my plane tickets!
+Luckily for me, I remember that I was traveling from airport 1 to airport N;
+however, I do not remember where I was supposed to transfer flights (if at
+all). To solve this problem, I decide to travel from airport 1 to airport N
+with the following process. At airport u, I choose a ticket uniformly at random
+(which must originate at airport u) and use it. This puts me at airport v. If
+I'm not at airport N, then I repeat this process until I reach airport N. Could
+you please compute the expected number of flights my trip will entail to the
+nearest integer?</p>
+
+<h4>Input</h4>
+
+<p>The first line contains an integer T (the number of test cases). T test
+cases follow.</p>
+
+<p>The first line of each test case contains integers N and M. N represents the
+number of airports on my map, and M represents the number of tickets I could
+possibly use. M lines follow as described.</p>
+
+<p>On each of the subsequent M lines are two integers u, v. Each line indicates
+that there exists a ticket from airport u to airport v. Each unordered pair (u,
+v) is guaranteed to be listed at most once.</p>
+
+<p>The provided graph is guaranteed to be a directed acyclic graph (in
+particular, there are no cycles). Also, for each ticket t, there is guaranteed
+to exist a path P from 1 to N such that P includes t.</p>
+
+<h4>Output</h4>
+
+<p>Output T real numbers, one on each line. The ith number should represent the
+ith answer rounded to three digits after the decimal point. For example, 0.7555
+rounds to 0.756, 100.10101 rounds to 100.101, and 5 would be printed as
+5.000.</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 10
+2 <= N, M <= 100000
+1 <= u, v <= N
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+2
+5 6
+1 3
+1 2
+3 4
+2 4
+3 5
+4 5
+2 1
+1 2
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+2.750
+1.000
+</pre>
+
+<h4>Explanation</h4>
+
+<p>In the first case, I have two tickets I can take from airport 1. If I fly to
+airport 3, then I will have two more options: 4 and 5. If I take 5, then I'm at
+my destination, and if I take 4, then I'll have to take a ticket to 5 for my
+next flight. On the other hand, if I go to 2 first, then I will definitely fly
+to 4 and then to 5. Taking the expected value over all of these choices, I will
+reach airport 5 in 2.75 flights on average.</p>
+
+<p>In the second case, I can only go straight to my final destination.</p>

@@ -1,0 +1,71 @@
+<h1>Flight Numbers</h1>
+
+<p>After going through security, you stop by the arrivals/departure monitors to
+find your gate. You don't remember your flight number, but you remember that
+the <a href="https://en.wikipedia.org/wiki/Parity_function">XOR of its bits</a>
+(when written in binary) is 1.</p>
+
+<p>Given all the flight numbers on the monitor, how many of them might be your
+flight?</p>
+
+<h4>Input</h4>
+
+<p>The first line will contain a single integer T, the number of test cases. T
+test cases follow.</p>
+
+<p>The first line of each test case will contain a single integer N, the number
+of flights. The second line of each test case will contain a list of N
+distinct space-separated integers X_i, the flight numbers.</p>
+
+<h4>Output</h4>
+
+<p>Your program should output T lines, one for each test case.</p>
+
+<p>For each test case, output the number of flight numbers X_i such that the
+XOR of the bits in X_i is 1.</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 100
+1 <= N <= 1,000
+1 <= X_i <= 1,000,000,000
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+1
+5
+1 5 4 2 3
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+3
+</pre>
+
+<h4>Explanation</h4>
+
+<p>Below are the binary representations of the flight numbers:</p>
+
+<ul>
+    <li>1 = 0001b
+    <li>5 = 0101b
+    <li>4 = 0100b
+    <li>2 = 0010b
+    <li>3 = 0011b
+</ul>
+
+<p>Below are the XORs of the bits in the flight numbers:</p>
+
+<ul>
+    <li>0001b =&gt; 1
+    <li>0101b =&gt; 0
+    <li>0100b =&gt; 1
+    <li>0010b =&gt; 1
+    <li>0011b =&gt; 0
+</ul>
+
+<p>So the XORs of the bits of 3 of the flight numbers are 1.</p>

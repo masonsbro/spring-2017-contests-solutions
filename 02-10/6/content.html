@@ -1,0 +1,62 @@
+<h1>Chat</h1>
+
+<p>You're headed to San Francisco for your awesome summer internship and in a stroke of luck ended up on the same plane as several of your friends! Unfortunately, you're all in different seats and internet on planes is expensive (not to mention crappy!). But the plane does provide a chat system so that you can chat with all of your friends during the flight.</p>
+
+<p>On the chat system you can send messages, receive messages, and delete conversations. Conversations are ordered on your screen based on the most recent action that wasn't a delete (so a send is equivalent to a receive, and the most recent conversation that has had a send or receive will appear at the top of your screen).</p>
+
+<p>Much to your annoyance, you can only delete conversations at the top of the screen, so each time a delete action is performed the most recently interacted with conversation is deleted.</p>
+
+<p>Given all of the actions that occurred in order of their occurrence (with the oldest action first), can you keep track of which conversation is being deleted?</p>
+
+<p><strong>WARNING: This problem is both input and output heavy. You probably want to use fast IO in your language of choice to avoid timing out.</strong></p>
+
+<h4>Input</h4>
+
+<p>The input will begin with a single integer T, the number of test cases.</p>
+
+<p>T test cases follow. Each test case begins with an integer I, the number of interactions you have with the messaging system. I interactions follow. Each interaction will take one of the following forms:</p>
+	<ul>
+		<li>You receive a message from person named NAME: <strong>RECEIVE NAME</strong></li>
+		<li>You send a message to person named NAME (and read any unread messages from NAME): <strong>SEND NAME</strong></li>
+		<li>You delete the conversation at the top of the screen: <strong>DELETE</strong></li>
+	</ul>
+<p>Interactions are listed in the order that they occurred and you may assume that no interactions occurred at the same time.</p>
+
+<p>You may assume that names with different capitalizations are distinct names.</p>
+
+<h4>Output</h4>
+
+<p>Each time the <strong>DELETE</strong> command appears, print out the name of the person from the conversation that was deleted.</p>
+
+<p>Each printed name should be on its own line. Print a single blank line after each test case. If DELETE is called and there are no conversations to delete, print "NONE".</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 10
+0 <= I <= 110000
+NAME will be at most 10 characters long and will contain only alphabetic characters.
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+1
+4
+SEND Ben
+RECEIVE April
+RECEIVE Jenny
+DELETE
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+Jenny
+
+</pre>
+
+<h4>Explanation</h4>
+<p>After the initial actions your list would be: Jenny, April, Ben. Jenny is at the front, so her name is deleted.</p>
+
+
