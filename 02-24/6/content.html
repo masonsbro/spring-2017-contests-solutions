@@ -1,0 +1,40 @@
+Title: Chair Race
+
+Problem statement:
+
+The GDC has lots of rolly chairs, and you've decided to organize a chair race!
+In this race, each person will sit in a rolly chair in some start room, and
+then roll their chair through a predefined sequence of rooms (connected by
+doors), ending in some finish room.
+
+You have been considering different possible routes for the race, and you've
+realized that you tend to prefer routes that start and finish in the same room.
+So, if such a route exists, you'd like to use it. However, to avoid confusing
+the contestants, a route is only "valid" if it doesn't visit any room more than
+once (except the start/finish).
+
+The building has $N$ rooms (numbered $1$ through $N$) and $M$ <strong>one-way
+</strong> doors. Given the layout of the building, determine whether there is a
+valid route that starts and ends in the same room.
+
+Input format:
+
+The first line contains two space-separated integers $N$ and $M$, the number of
+rooms and one-way doors respectively. $M$ lines follow. Each of the next $M$
+lines contains two integers $u$ and $v$, indicating that there is a one-way
+door from room $u$ to room $v$.
+
+Constraints:
+
+ - $2 \leq N \leq 10^5$
+ - $1 \leq M \leq 10^5$
+ - $1 \leq u, v \leq N$
+ - $u \neq v$
+
+There will never be two doors that connect the same ordered pair of rooms. That
+is, all doors are distinct.
+
+Output format:
+
+Output a single line containing "YES" if a valid route that starts and finishes
+in the same room exists, or "NO" if there is no such route.

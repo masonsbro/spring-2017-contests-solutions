@@ -1,0 +1,44 @@
+Title: Fire Safety
+
+Problem statement:
+
+According to Scranton fire code, every room in an office building must have a
+posted maximum occupancy. There are many ways to measure how many people can
+safely be in a room, but Dwight, the landlord of a building in 1725 Slough Avenue, is only concerned that everyone can exit the office in case of a fire.
+
+The building has $S$ staircases. Each staircase has a different congestion
+factor $C_i$, which characterizes how fast people can get through the
+staircase. If $P_i$ people go through a staircase with congestion $C_i$, then
+it takes $P_i \times C_i$ minutes for all $P_i$ of those people to get to the
+bottom of the staircase.
+
+Dwight is trying to find the maximum number of people he can cram into each of
+his offices. $P$ people can fit into an office if each person is assigned to a
+staircase and the group in each staircase can get out within $T$ minutes, set by
+the fire code.
+
+Can you write a program that will help him do that? It is guaranteed that no
+modern office buildings can support a number of people that will overflow a
+signed 32-bit integer.
+
+Input format:
+
+The first line of input will contain integers $S$ and $T$, the number of
+staircases in the office and the time all people must be out of the office by.
+The next line contains $S$ space separated integers, the congestion $C_i$ for each
+staircase.
+
+Output format:
+
+On the first line of output, print $P$, the maximum occupancy of the office
+building. On the second line, print $S$ space separated integers, the number of
+people assigned to each staircase.
+
+The sum of the values in the second line must be equal to the number printed in
+the first line.
+
+Constraints:
+
+$1 \leq S \leq 10^5$
+$1 \leq T \leq 10^9$
+$1 \leq C_i \leq 10^6$

@@ -1,0 +1,39 @@
+Required knowledge: DP, Combinatorics
+
+Time complexity: O(N + M)
+
+Approach:
+
+First, for 40% score, there is a straightforward $O(NM)$ dynamic programming
+solution: Let $DP[i][j]$ be the number of ways (mod $10^9+7$) to make a
+staircase with $N = i$ and $M = j$. Here, we allow $j$ to be negative.
+
+For our base case, we have $DP[1][0] = 1$: there is one staircase that is $1$
+foot long and does not change height. For $i > 1$, we have $DP[i][j] =
+(DP[i-1][j-1] + DP[i-1][j] + DP[i-1][j+1]) \mod 10^9+7$. Our final answer will
+be $DP[N][M]$.
+
+For 100% score, some extra observations are necessary. First, there are $N - 1$
+places where the height of the staircase can change. Each of these can take a
+value of $-1$ (for a step down), $1$ (for a step up), or $0$ (for a
+continuation of the same step). So we want to know the number of sequences of
+$N - 1$ numbers, each being $-1$, $1$, or $0$, whose sum is $M$.
+
+Computing this directly seems hard, so let's solve a similar but easier problem
+first: how many sequences are there of $C$ numbers, with each being only $1$ or
+$0$, whose sum is $L$? Well, if $C < L$, the answer is zero, otherwise we need
+to pick $L$ elements of our sequence to be $1$ (the others must be $0$). Thus,
+the number of sequences we can make is ${C \choose L}$.
+
+Now, how can we transform our main problem into this new problem? Let's fix the
+number of $-1$s in our sequence (say there are $K$ of them). There are
+${{N - 1} \choose K}$ ways to pick those $-1$ numbers. Now let's remove them;
+we are left with $N - K - 1$ numbers (each $0$ or $1$) whose sum is $M + K$.
+But we know the formula for this problem: it's ${{N - K - 1} \choose {M + K}}$.
+
+We can just iterate over all values of $K$ (from $0$ to $N$) and, for each one,
+add ${{N - 1} \choose K} \cdot {{N - K - 1} \choose {M + K}} \mod 10^9+7$ to
+our running total.
+
+Those binomial coefficients can be found via precomputed factorials (and their
+inverses modulo $10^9+7$).

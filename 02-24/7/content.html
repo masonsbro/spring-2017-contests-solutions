@@ -1,0 +1,44 @@
+Title: Blah
+
+Problem statement:
+
+A certain accountant, Mr. Bogus Von Fakename ("It's pronounced 'fah-kay-nah-may'") is
+riding down a long, slow escalator one day when he looks out the window and sees a very
+strange tree: a binary tree, in fact, and each branch junction has a number on it. Being a
+man of numbers, he is fascinated, and writes down each number as he sees it. Since he's on
+an escalator, he sees the tree in columns: left to right, then top to bottom, then left to
+right. For example, if the tree was
+
+```
+            7
+           / \
+          /   \
+         /     \
+        5       11
+       / \     /  \
+      /   \   /    \
+      3    6 9     15
+            / \
+           /   \
+          /     10
+         8
+```
+
+He would see the columns `3`, `5 8`, `7 6 9`, `11 10`, `15` in that order.
+
+Precisely, if any node in the tree is in column $k$, its left child (if it exists) is in
+column $k-1$, and its right child is in column $k+1$. Within each column, ensure nodes at
+the same level are read left-to-right.
+
+Input format:
+
+The input starts with an integer $T$, the number of test cases, on its own line. $T$ test
+cases follow.
+
+Each test cases starts with an integer $n$, the number of entries in the tree, on its own
+line. The next line contains $n$ unique integers, separated by spaces, that should form
+the tree.
+
+Output format:
+
+For each test case, output the nodes of the tree in the order seen by Mr. Von Fakename.

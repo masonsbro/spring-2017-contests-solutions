@@ -1,0 +1,89 @@
+Title: Baby Steps
+
+Problem statement:
+
+Ryan has been hired by UTCS to build a staircase. It starts at ground level and
+ends $M$ feet above ground level, and should be $N$ feet long. For example, the
+following is a valid staircase for $N = 3$ and $M = 2$.
+
+       XF
+      XX
+    GXXX
+
+Here, we use G to denote ground level and F to denote $M$ feet above ground
+level. A person about to use the staircase would be standing on top of the G,
+and a person who just finished using the staircase would be standing on top of
+the F.  Note that the first column after G must be at the same level as G, and
+the last column must be $M$ feet higher.
+
+However, not every step must be the same length: each step can be any integer
+length. For example, the following is a valid staircase for $N = 4$ and $M =
+2$.
+
+        XF
+      XXX
+    GXXXX
+
+Every step must be at an integer number of feet above or below ground level
+(or, of course, at ground level), and it is okay for a step to be below the
+previous step, as long as at the end the staircase ends up in the right place.
+For example, the following is a valid staircase for $N = 10$ and $M = 2$. Note
+that it goes below ground level.
+
+          XX   
+         XXXX XF
+        XXXXXXX
+    GX XXXXXXXX
+     XXXXXXXXXX
+
+Finally, a valid staircase can only use "baby steps"--that is, each step can
+only be exactly 1 foot higher or 1 foot lower than the previous step.
+
+For example, the following staircase is NOT valid:
+
+       XF
+       X
+    GXXX
+
+These are the only restrictions Ryan was given, and he wants to know how many
+valid staircases he can build. Two staircases are considered different if there
+exists a column in which the staircases have different heights. Note that two
+valid staircases cannot differ in the first or last column, because these must
+be at ground level and $M$ feet above ground level, respectively.
+
+For example, if $N = 3$ and $M = 0$, here are the valid staircases:
+
+    GXXXF
+&nbsp;
+
+      X
+    GXXXF
+&nbsp;
+
+    GX XF
+     XXX
+
+These are all the valid staircases for $N = 3$ and $M = 0$, so the answer for
+this case would be $3$. In general, the answer may be very large, so output the
+remainder after dividing the number of valid staircases by $10^9 + 7$.
+
+Input format:
+
+The only line of input contains two space-separated integers $N$ and $M$.
+
+Constraints:
+
+For 40% score:
+
+- $1 \leq N \leq 10^3$
+- $0 \leq M \leq 10^3$
+
+For 100% score:
+
+- $1 \leq N \leq 10^6$
+- $0 \leq M \leq 10^6$
+
+Output format:
+
+Output a single integer, the number of valid staircases Ryan can build modulo
+$10^9 + 7$.
